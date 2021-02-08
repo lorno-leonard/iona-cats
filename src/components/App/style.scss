@@ -1,0 +1,12 @@
+@import "~bootstrap/scss/bootstrap";
+
+$bg-color: #0d1117;
+$text-color: #fff;
+
+html,
+body,
+#root {
+  height: 100%;
+  background-color: $bg-color;
+  color: $text-color;
+}
