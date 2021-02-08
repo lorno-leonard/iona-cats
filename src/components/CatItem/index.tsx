@@ -10,15 +10,15 @@ interface Props {
 
 const CatItem: FC<Props> = ({ id, url }) => {
 	return (
-		<div className="col-12 col-sm-6 col-md-3">
-			<Card bg="dark">
-				<Card.Img variant="top" src={url} />
-				<Card.Body>
-					<Card.Title>
-						<Link to={`cat/${id}`}>{id}</Link>
-					</Card.Title>
-				</Card.Body>
-			</Card>
+		<div className="cat-card-item col-12 col-sm-6 col-md-3 p-0">
+			<Link to={`cat/${id}`} className="cat-card-item__link">
+				<Card bg="dark">
+					<Card.Img src={url} className="cat-card-item__card-img" />
+					<Card.ImgOverlay className="cat-card-item__card-img-overlay">
+						<span>View</span>
+					</Card.ImgOverlay>
+				</Card>
+			</Link>
 		</div>
 	)
 }

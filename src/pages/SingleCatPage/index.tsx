@@ -28,7 +28,7 @@ const SingleCatPage: FC = () => {
 	}, []);
 
 	return (
-		<Container className="py-5">
+		<Container className="single-cat-page py-5">
 			{error && (
 				<Alert variant="danger">
 					Apologies but we could not load new cats for you at this time! Miau!
@@ -41,8 +41,8 @@ const SingleCatPage: FC = () => {
 						<Button variant="secondary" as={Link} to={`/?breed=${cat.breeds[0].id}`}>Back</Button>
 					</Card.Header>
 					<Card.Img src={cat.url} />
-					<Card.ImgOverlay>
-						<div className="card-img-overlay__content">
+					<Card.ImgOverlay className="single-cat-page__card-img-overlay">
+						<div className="single-cat-page__card-img-overlay__content">
 							<h4>{cat.breeds[0].name}</h4>
 							<h5>🌎 {cat.breeds[0].origin}</h5>
 							<h5>😇 {cat.breeds[0].temperament}</h5>

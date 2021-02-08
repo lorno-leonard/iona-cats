@@ -104,16 +104,16 @@ const HomePage: FC = () => {
 				</Form.Group>
 			</Form>
 
-			{(!cats || cats.length === 0) && <p>No cats available</p>}
+			{!loadingCats && (!cats || cats.length === 0) && <p>No cats available</p>}
 			{cats && cats.length > 0 && (
-				<div className="row">
+				<div className="row m-0">
 					{cats.map(cat => <CatItem key={cat.id} id={cat.id} url={cat.url} />)}
 				</div>
 			)}
 
 			{(!selectedBreed || (selectedBreed && canLoadMore)) && (
-				<Button variant="success" disabled={loadingBreeds || loadingCats || !canLoadMore || !selectedBreed} onClick={_onLoadMore}>
-					Load More
+				<Button variant="success" disabled={loadingBreeds || loadingCats || !canLoadMore || !selectedBreed} onClick={_onLoadMore} className="mt-3">
+					{loadingCats ? 'Loading...' : 'Load More'}
 				</Button>
 			)}
 		</Container>
