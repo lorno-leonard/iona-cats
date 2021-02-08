@@ -15,7 +15,7 @@ const CatItem: FC<Props> = ({ id, url }) => {
 				<Card bg="dark">
 					<Card.Img src={url} className="cat-card-item__card-img" />
 					<Card.ImgOverlay className="cat-card-item__card-img-overlay">
-						<span>View</span>
+						<span>View Details</span>
 					</Card.ImgOverlay>
 				</Card>
 			</Link>
