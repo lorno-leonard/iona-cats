@@ -7,9 +7,11 @@ interface CatsProps {
 }
 
 const getCats = ({ breed, page, limit }: CatsProps) => request.get('images/search', { breed_id: breed, page, limit });
+const getCatById = (id: string) => request.get(`images/${id}`);
 
 const images = {
-	getCats
+	getCats,
+	getCatById
 }
 
 export default images;

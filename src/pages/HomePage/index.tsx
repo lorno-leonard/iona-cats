@@ -47,13 +47,8 @@ const HomePage: FC = () => {
 		}
 	}, []);
 
-	useEffect(() => {
-		console.log({ cats, canLoadMore });
-	}, [cats, canLoadMore])
-
 	// Base function in getting cats
 	const _getCats = (breed: string, _page: number) => {
-		console.log({ _page });
 		// Get cats
 		(async () => await getCats(breed, _page, 10))();
 	}
@@ -91,7 +86,7 @@ const HomePage: FC = () => {
 	}
 
 	return (
-		<Container className="mt-5">
+		<Container className="py-5">
 			{error && (
 				<Alert variant="danger">
 					Apologies but we could not load new cats for you at this time! Miau!

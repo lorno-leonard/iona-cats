@@ -145,7 +145,6 @@ export const CatsProvider: FC<ProviderProps> = ({ children }) => {
 
 	// Get cats
 	const getCats = async (breed: string, page: number, limit: number) => {
-		console.log({ breed, page });
 		dispatch({
 			type: ActionTypes.GET_CATS_REQUEST,
 			...(page === 1 && { payload: { cats: [], canLoadMore: false } })
@@ -185,7 +184,7 @@ export const CatsProvider: FC<ProviderProps> = ({ children }) => {
 				// Add only non-exisint cats in the array
 				newCats = [...prevCats, ...response.filter(f => !prevCats.some(s => s.id === f.id))]
 			}
-			console.log({ prevCats, newCats });
+
 			dispatch({
 				type: ActionTypes.GET_CATS_SUCCESS,
 				payload: {

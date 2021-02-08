@@ -12,6 +12,7 @@ import Page404 from '../../pages/Page404';
 
 // Providers
 import { CatsProvider } from '../../context/cats';
+import { CatDetailsProvider } from '../../context/cat_details';
 
 const App: FC = () => {
 	return (
@@ -24,7 +25,9 @@ const App: FC = () => {
 					</CatsProvider>
 				</Route>
 				<Route path="/cat/:id" exact>
-					<SingleCatPage />
+					<CatDetailsProvider>
+						<SingleCatPage />
+					</CatDetailsProvider>
 				</Route>
 				<Route path="*">
 					<Page404 />
